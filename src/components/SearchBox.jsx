@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchBox = ({ onSearch }) => {
+const SearchBox = ({ onSearch, disabled }) => {
   return (
     <div>
       <input
@@ -10,12 +10,14 @@ const SearchBox = ({ onSearch }) => {
             onSearch(e.target.value);
           }
         }}
+        disabled={disabled}
       />
       <button
         onClick={(e) => {
           const input = e.target.previousSibling.value;
           onSearch(input);
         }}
+        disabled={disabled}
       >
         Search
       </button>
