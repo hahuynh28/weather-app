@@ -24,12 +24,14 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Weather App</h1>
-      <SearchBox onSearch={handleSearch} disabled={loading} />
-      {loading && <Spinner />}
-      {error && <p style={{ color: "red" }}>{error}</p>}
-      {!loading && !error && <WeatherCard weather={weather} />}
+    <div className="min-h-screen bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))]">
+      <div className="max-w-md mx-auto p-6">
+        <h1 className="text-3xl font-bold mb-4">Weather App</h1>
+        <SearchBox onSearch={handleSearch} disabled={loading} />
+        {loading && <Spinner />}
+        {error && <p style={{ color: "red" }}>{error}</p>}
+        {!loading && !error && <WeatherCard weather={weather} />}
+      </div>
     </div>
   );
 }

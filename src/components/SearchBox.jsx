@@ -1,8 +1,9 @@
 import React from "react";
+import { Button } from "@/components/ui/button";
 
 const SearchBox = ({ onSearch, disabled }) => {
   return (
-    <div>
+    <div className="flex gap-2">
       <input
         placeholder="Enter city name"
         onKeyDown={(e) => {
@@ -11,16 +12,9 @@ const SearchBox = ({ onSearch, disabled }) => {
           }
         }}
         disabled={disabled}
+        className="flex-1 border border-[rgb(var(--border))] px-3 py-2 rounded"
       />
-      <button
-        onClick={(e) => {
-          const input = e.target.previousSibling.value;
-          onSearch(input);
-        }}
-        disabled={disabled}
-      >
-        Search
-      </button>
+      <Button disabled={disabled}>Search</Button>
     </div>
   );
 };
