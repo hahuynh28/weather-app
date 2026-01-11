@@ -3,6 +3,7 @@ import SearchBox from "./components/SearchBox";
 import WeatherCard from "./components/WeatherCard";
 import { fetchWeatherData } from "./services/weatherApi";
 import Spinner from "./components/Spinner";
+import EmptyState from "./components/EmptyState";
 
 function App() {
   const [weather, setWeather] = useState(null);
@@ -31,6 +32,7 @@ function App() {
         {loading && <Spinner />}
         {error && <p style={{ color: "red" }}>{error}</p>}
         {!loading && !error && <WeatherCard weather={weather} />}
+        <EmptyState weather={weather} loading={loading} error={error} />
       </div>
     </div>
   );
