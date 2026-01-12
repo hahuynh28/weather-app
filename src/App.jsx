@@ -4,6 +4,7 @@ import WeatherCard from "./components/WeatherCard";
 import { fetchWeatherData } from "./services/weatherApi";
 import Spinner from "./components/Spinner";
 import EmptyState from "./components/EmptyState";
+import LocationDisplay from "./components/LocationDisplay";
 
 function App() {
   const [weather, setWeather] = useState(null);
@@ -29,10 +30,8 @@ function App() {
       <div className="max-w-md mx-auto p-6">
         <h1 className="text-3xl font-bold mb-4">Weather App</h1>
         <SearchBox onSearch={handleSearch} disabled={loading} />
-        {loading && <Spinner />}
-        {error && <p style={{ color: "red" }}>{error}</p>}
-        {!loading && !error && <WeatherCard weather={weather} />}
-        <EmptyState weather={weather} loading={loading} error={error} />
+
+        <LocationDisplay weather={weather} loading={loading} error={error} />
       </div>
     </div>
   );
