@@ -9,7 +9,11 @@ const LocationDisplay = ({ weather, loading, error }) => {
   }
 
   if (error) {
-    return <p className="mt-4 text-center text-red-500">{error}</p>;
+    return (
+      <div className="mt-6 rounded-lg border border-red-200 bg-red-50 p-4 text-center text-red-600">
+        {error}
+      </div>
+    );
   }
 
   if (!weather) {

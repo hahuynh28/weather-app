@@ -1,9 +1,6 @@
 import { useState } from "react";
 import SearchBox from "./components/SearchBox";
-import WeatherCard from "./components/WeatherCard";
 import { fetchWeatherData } from "./services/weatherApi";
-import Spinner from "./components/Spinner";
-import EmptyState from "./components/EmptyState";
 import LocationDisplay from "./components/LocationDisplay";
 
 function App() {
@@ -19,7 +16,11 @@ function App() {
       const data = await fetchWeatherData(city);
       setWeather(data);
     } catch (error) {
-      setError("City not found");
+      if (error.message === "city_not_found") {
+        setError("City not found. Please check the spelling.");
+      } else {
+        setError("Something went wrong. Please try again later.");
+      }
     } finally {
       setLoading(false);
     }
