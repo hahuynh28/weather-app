@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SearchBox from "./components/SearchBox";
 import { fetchWeatherData } from "./services/weatherApi";
 import LocationDisplay from "./components/LocationDisplay";
@@ -15,6 +15,7 @@ function App() {
 
       const data = await fetchWeatherData(city);
       setWeather(data);
+      localStorage.setItem("lastCity", city);
     } catch (error) {
       if (error.message === "city_not_found") {
         setError("City not found. Please check the spelling.");
@@ -25,6 +26,13 @@ function App() {
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    const lastCity = localStorage.getItem("lastCity");
+    if (lastCity) {
+      handleSearch(lastCity);
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))]">

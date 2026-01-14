@@ -6,7 +6,9 @@ const EmptyState = ({ weather, loading, error }) => {
   return (
     <div className="mt-10 text-center text-slate-500">
       <p className="text-lg">🔍 Search for a city to see the weather</p>
-      <p className="text-sm mt-1">Try: Toronto, Vancouver, Ottawa</p>
+      <p className="text-sm mt-1">
+        Your last search will be saved automatically.
+      </p>
     </div>
   );
 };
