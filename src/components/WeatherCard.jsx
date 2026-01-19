@@ -1,30 +1,35 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { MapPin } from "lucide-react";
-import { formatDate } from "@/lib/formatDate";
 
 const WeatherCard = ({ weather }) => {
   if (!weather) return null;
 
-  const dateString = formatDate(weather.dt);
   const temperatureC = Math.round(weather.main.temp);
 
   return (
     <div className="mt-4 rounded-lg bg-[rgb(var(--color-card))] shadow p-4">
-      <Badge variant="secondary" className="flex w-fit items-center gap-1">
-        <MapPin className="h-4 w-4" />
-        {weather.name}
-      </Badge>
+      <div className="grid grid-cols-2 gap-6 items-center">
+        {/* LEFT */}
+        <div>
+          <Badge
+            variant="secondary"
+            className="flex w-fit items-center gap-2 text-base font-semibold px-1 py-1 mb-4"
+          >
+            <MapPin className="h-5 w-5" />
+            {weather.name}
+          </Badge>
+        </div>
 
-      <p className="text-sm text-muted-foreground">
-        {weather?.dt && formatDate(weather.dt)}
-      </p>
+        {/* RIGHT */}
+        <div className="flex flex-col items-end gap-1">
+          <p className="text-3xl font-semibold">{temperatureC}°C</p>
 
-      <p className="text-3x1 font-semibold">{temperatureC}°C</p>
-
-      <p className="text-sm capitalize text-muted-foreground">
-        {weather.weather[0].description}
-      </p>
+          <p className="text-sm capitalize text-muted-foreground">
+            {weather.weather[0].description}
+          </p>
+        </div>
+      </div>
     </div>
   );
 };
