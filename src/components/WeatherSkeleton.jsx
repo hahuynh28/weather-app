@@ -3,7 +3,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 
 const WeatherSkeleton = () => {
   return (
-    <div className="mt-4 rounded-lg bg-[rgb(var(--color-card))] shadow p-4 space-y-2">
+    <div className="flex flex-col items-center text-center gap-3 mb-14">
       <Skeleton className="h-5 w-1/3" />
       <Skeleton className="h-4 w-1/2" />
       <Skeleton className="h-4 w-2/3" />

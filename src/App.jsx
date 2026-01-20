@@ -35,12 +35,15 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[rgb(var(--color-bg))] text-[rgb(var(--color-text))]">
+    <div className="min-h-screen flex flex-col items-center justify-center">
       <div className="max-w-md mx-auto p-6">
-        <h1 className="text-3xl font-bold mb-4">Weather App</h1>
-        <SearchBox onSearch={handleSearch} disabled={loading} />
+        <div className="mb-12">
+          <SearchBox onSearch={handleSearch} disabled={loading} />
+        </div>
 
-        <LocationDisplay weather={weather} loading={loading} error={error} />
+        <div className="flex flex-1 items-center justify-center">
+          <LocationDisplay weather={weather} loading={loading} error={error} />
+        </div>
       </div>
     </div>
   );
