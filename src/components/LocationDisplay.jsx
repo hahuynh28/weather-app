@@ -1,6 +1,5 @@
 import React from "react";
 import EmptyState from "./EmptyState";
-import Spinner from "./Spinner";
 import WeatherCard from "./WeatherCard";
 import WeatherSkeleton from "./WeatherSkeleton";
 

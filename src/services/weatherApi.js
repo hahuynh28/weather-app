@@ -1,6 +1,6 @@
 export const fetchWeatherData = async (city) => {
   const geoRes = await fetch(
-    `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`
+    `https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=1`,
   );
   const geoData = await geoRes.json();
 
@@ -11,7 +11,7 @@ export const fetchWeatherData = async (city) => {
   const { latitude, longitude, name } = geoData.results[0];
 
   const weatherRes = await fetch(
-    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`
+    `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current_weather=true`,
   );
   const weatherData = await weatherRes.json();
 

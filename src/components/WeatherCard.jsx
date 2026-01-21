@@ -9,7 +9,7 @@ const WeatherCard = ({ weather }) => {
   const desc = weather.weather?.[0]?.description;
 
   return (
-    <div className="flex flex-col items-center text-center gap-3 mb-14">
+    <div className="flex flex-col items-center text-center gap-3">
       <div className="flex items-center gap-2 text-lg font-medium">
         <MapPin className="h-5 w-5" />
         <span>{weather.name}</span>

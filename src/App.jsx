@@ -35,15 +35,13 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center">
-      <div className="max-w-md mx-auto p-6">
-        <div className="mb-12">
-          <SearchBox onSearch={handleSearch} disabled={loading} />
-        </div>
+    <div className="min-h-screen flex flex-col items-center bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
+      <div className="mt-8">
+        <SearchBox onSearch={handleSearch} disabled={loading} />
+      </div>
 
-        <div className="flex flex-1 items-center justify-center">
-          <LocationDisplay weather={weather} loading={loading} error={error} />
-        </div>
+      <div className="flex flex-1 items-center justify-center">
+        <LocationDisplay weather={weather} loading={loading} error={error} />
       </div>
     </div>
   );
