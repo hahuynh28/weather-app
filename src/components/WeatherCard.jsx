@@ -17,10 +17,12 @@ const WeatherCard = ({ weather }) => {
       </div>
 
       {/* Main temperature display */}
-      <p className="text-7xl font-semibold tracking-tight">{temp}°C</p>
+      <p className="text-7xl font-semibold tracking-tight drop-shadow">
+        {temp}°C
+      </p>
 
       {/* Weather description */}
-      <p className="text-lg capitalize text-muted-foreground">{desc}</p>
+      <p className="text-sm text-white/70 mt-1">{desc}</p>
     </div>
   );
 };

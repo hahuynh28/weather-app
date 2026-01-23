@@ -36,7 +36,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
-      <div className="mt-8">
+      <div className="mt-10 opacity-90">
         <SearchBox onSearch={handleSearch} disabled={loading} />
       </div>
 
