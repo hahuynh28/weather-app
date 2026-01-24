@@ -8,6 +8,9 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const temp = weather?.main?.temp;
+  const isCold = temp < 15;
+
   async function handleSearch(city) {
     try {
       setError("");
@@ -35,7 +38,15 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 text-white">
+    <div
+      className={`min-h-screen flex flex-col items-center text-white
+      ${
+        isCold
+          ? "bg-gradient-to-b from-sky-900 via-slate-800 to-slate-900"
+          : "bg-gradient-to-b from-orange-400 via-rose-500 to-rose-600"
+      }
+    `}
+    >
       <div className="mt-10 opacity-90">
         <SearchBox onSearch={handleSearch} disabled={loading} />
       </div>
