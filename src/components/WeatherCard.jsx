@@ -1,17 +1,10 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { MapPin } from "lucide-react";
+import { getWeatherIcon } from "../lib/weather";
 
 const WeatherCard = ({ weather }) => {
   if (!weather) return null;
-
-  function getWeatherIcon(code) {
-    if (code === 0) return "☀️";
-    if ([1, 2, 3].includes(code)) return "☁️";
-    if (code >= 51 && code <= 67) return "🌧️";
-    if (code >= 71 && code <= 77) return "❄️";
-    return "🌤️";
-  }
 
   const temp = Math.round(weather.main.temp);
   const desc = weather.weather?.[0]?.description;
