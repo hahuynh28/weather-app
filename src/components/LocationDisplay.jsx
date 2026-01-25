@@ -3,6 +3,7 @@ import EmptyState from "./EmptyState";
 import WeatherCard from "./WeatherCard";
 import WeatherSkeleton from "./WeatherSkeleton";
 
+// This component is responsible for deciding what to display based on the current state.
 const LocationDisplay = ({ weather, loading, error }) => {
   if (loading) {
     return <WeatherSkeleton />;
