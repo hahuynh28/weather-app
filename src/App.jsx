@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import SearchBox from "./components/SearchBox";
 import { fetchWeatherData } from "./services/weatherApi";
-import LocationDisplay from "./components/LocationDisplay";
+import LocationDisplay from "./components/WeatherResult";
 
 function App() {
   const [weather, setWeather] = useState(null);
