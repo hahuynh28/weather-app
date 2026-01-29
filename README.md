@@ -1,9 +1,7 @@
 # Weather App
 
-A simple weather application built with React to practice API integration,
+A simple weather application built with React, focusing on API integration,
 state management, and clean component-based architecture.
-
-This project is currently a work in progress.
 
 ## Features
 
@@ -25,4 +23,3 @@ This project is currently a work in progress.
 ```bash
 npm install
 npm run dev
-```
